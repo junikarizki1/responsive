@@ -18,16 +18,17 @@ header{
 	align-items: center;
 	justify-content: space-between;
 	background: pink;
-	padding: 28px 12%;
+	padding: 14px 2%;
 	transition: all .50s ease;
 }
 .logo{
 	display: flex;
 	align-items: center;
+	margin-left: -10px;
 }
 .logo img{
 	width: 60px;
-	margin-right: 3px;
+	margin-right: 2px;
 }
 .logo span{
   font-family: 'Pacifico', cursive;
@@ -35,10 +36,13 @@ header{
 	font-size: 1.7rem;
 	font-weight: 600;
 }
-.navbar li{
-	display: flex;
-	background-color: white ;
-}
+ .navbar{
+    display: flex;
+    transition: all .50s ease;
+  }
+ .navbar li{
+  padding: 10px;
+ }
 .navbar a{
   color: #964b00;
 	font-size: 1.1rem;
@@ -48,20 +52,27 @@ header{
 .navbar a:hover{
 	color: pink;
 }
-.main{
-	display: flex;
-	align-items: center;
-}
+.navbar a.active{
+	  color: pink;
+	  width: 200px;
+	  border: 1px solid pink;
+	  background-color: #964b00;
+	  border-radius: 10px;
+	  display: none;
+	}
+	.navbar a.active1 {
+	  display: none;
+	}
 .main a{
-	margin-right: 25px;
-	margin-left: 10px;
-	color: #964b00;
-	font-size: 1.1rem;
-	font-weight: 500;
-	transition: all .50s ease;
-	display: flex;
+  margin-right: 0px;
+  margin-left: 10px;
+  color: #964b00;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all .50s ease;
+  display: flex;
 }
-.main a:hover{
+  .main a:hover{
 	color: red;
 }
 .main .user{
@@ -73,7 +84,12 @@ header{
 	font-size: 28px;
 	margin-right: 5px;
 }
+.main{
+	display: none;
+}
+
 #menu-icon{
+  display: none;
 	font-size: 35px;
 	color: #964b00;
 	cursor: pointer;
@@ -184,51 +200,84 @@ button a {
   align-items: center;
 }
 
-
-@media screen and (max-width: 1090px){
+/*TABLET DEVICE*/
+@media screen and (max-width: 768px){
   #menu-icon{
-    display: block;
+		display: block;
+		z-index: 10002;
+		margin-right: 5px;
+	}
+	.navbar{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 50%;
+    height: 29vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all .50s ease;
   }
-  header{
-    padding: 14px 2%;
-    transition: .2s;
-  }
-  .logo span {
-    font-size: 25px;
+.navbar li{
+  display: flex;
+  background-color: white ;
+  padding: 0px;
+}
+	.navbar a{
+	  display: block;
+	  margin: 12px 0;
+	  padding: 0px 25px;
+	  transition: all .50s ease;
+	}
+	.navbar a:hover{
+	  color: pink;
+	  transform: translateY(5px);
+	}
+	.navbar a.active {
+	  display: flex;
+	}
+	.navbar a.active1 {
+	  display: flex;
+	}
+	.navbar.open{
+	 right: 0;
+	}
+  .main {
+    display: flex;
   }
   
+}
+/*MOBILE DEVICE*/
+@media screen and (max-width: 576px) {
   .navbar{
     position: absolute;
     top: 100%;
     right: -100%;
-    width: 270px;
+    width: 100%;
     height: 29vh;
-    background: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    border-radius: 10px;
     transition: all .50s ease;
   }
-  .navbar a{
-    display: block;
-    margin: 12px 0;
-    padding: 0px 25px;
-    transition: all .50s ease;
-  }
-  .navbar a:hover{
-    color: pink;
-    transform: translateY(5px);
-  }
-  .navbar a.active{
-    color: pink;
-  }
-  .navbar.open{
-   right: 0;
-  }
+.navbar li{
+  display: flex;
+  background-color: white ;
 }
-/*MOBILE DEVICE*/
-@media screen and (max-width: 576px) {
+.navbar a{
+	  display: block;
+	  margin: 12px 0;
+	  padding: 0px 25px;
+	  transition: all .50s ease;
+	}
+	
+	.navbar a:hover{
+	  color: pink;
+	  transform: translateY(5px);
+	}
+	.navbar.open{
+	 right: 0;
+	}
   #menu-icon{
 		display: block;
 		z-index: 10002;
@@ -250,38 +299,6 @@ button a {
 	}
 	.main .user {
 	  font-size: 10px;
-	}
-	.navbar{
-	  position: absolute;
-	  top: 100%;
-	  right: -100%;
-	  width: 100%;
-	  height: 29vh;
-	  background: white;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: flex-start;
-	  transition: all .50s ease;
-	}
-	.navbar a{
-	  display: block;
-	  margin: 12px 0;
-	  padding: 0px 25px;
-	  transition: all .50s ease;
-	}
-	.navbar a:hover{
-	  color: pink;
-	  transform: translateY(5px);
-	}
-	.navbar a.active{
-	  color: pink;
-	  width: 200px;
-	  border: 1px solid pink;
-	  background-color: #964b00;
-	  border-radius: 10px;
-	}
-	.navbar.open{
-	 right: 0;
 	}
 	.search-area {
 	  height: 50vh;
